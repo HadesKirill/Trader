@@ -1,0 +1,1 @@
+F:\MyTraderBlazor\MyTraderBlazor\MyTraderBlazor.csproj;x64

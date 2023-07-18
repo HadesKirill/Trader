@@ -1,0 +1,23 @@
+@page "/actual"
+@using MyTraderBlazor.Logic
+
+<div id="msg">
+    @if (connected)
+    {
+        <p>Connected to the database</p>
+    }
+    else
+    {
+        <p>Failed to connect to the database</p>
+    }
+</div>
+
+@code {
+    private bool connected;
+
+    protected override void OnInitialized()
+    {
+        var actual = new ActualController();
+        connected = actual.TestConnect();
+    }
+}

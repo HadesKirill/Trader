@@ -1,0 +1,50 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="bottom-navigation">
+    @if (ShowNavBar)
+    {
+        <nav class="flex-row">
+            <NavLink class="nav-link" href="news">
+                <span class="oi oi-document" aria-hidden="true"></span> Новости
+            </NavLink>
+            <NavLink class="nav-link" href="actual">
+                <span class="oi oi-clock" aria-hidden="true"></span> Актуальное
+            </NavLink>
+            <NavLink class="nav-link" href="quotes">
+                <span class="oi oi-dollar" aria-hidden="true"></span> Котировки
+            </NavLink>
+            <NavLink class="nav-link" href="graphs" Match="NavLinkMatch.All">
+                <span class="oi oi-graph" aria-hidden="true"></span> Графики
+            </NavLink>
+            <NavLink class="nav-link" href="more" Match="NavLinkMatch.All">
+                <span class="oi oi-menu" aria-hidden="true"></span> Ещё
+            </NavLink>
+        </nav>
+    }
+</div>
+
+@code {
+    private bool ShowNavBar { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+        UpdateShowNavBar();
+    }
+
+    private void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        UpdateShowNavBar();
+    }
+
+    private void UpdateShowNavBar()
+    {
+        var currentPath = NavigationManager.Uri;
+        ShowNavBar = !currentPath.Equals("/", StringComparison.OrdinalIgnoreCase);
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
