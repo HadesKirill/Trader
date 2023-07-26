@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using MyTraderBlazor.Logic;
+using MyTraderBlazor.Controllers;
 
 namespace MyTraderBlazor;
 
@@ -15,7 +15,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 			});
 
-		builder.Services.AddMauiBlazorWebView();
+        builder.Services.AddSingleton<DataController>();
+
+        builder.Services.AddMauiBlazorWebView();
 
 #if DEBUG
 		builder.Services.AddBlazorWebViewDeveloperTools();

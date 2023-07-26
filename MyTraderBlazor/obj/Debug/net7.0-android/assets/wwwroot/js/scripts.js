@@ -57,6 +57,7 @@ function loadWidgetGraph(divname, symbol, width, height, theme, locale) {
     var script1 = document.createElement('script');
     script1.type = 'text/javascript';
     script1.src = 'https://s3.tradingview.com/tv.js';
+    script1.async = true;
 
     var script2 = document.createElement('script');
     script2.type = 'text/javascript';
@@ -74,14 +75,28 @@ function loadWidgetGraph(divname, symbol, width, height, theme, locale) {
         "allow_symbol_change": true,
         "container_id": "tradingview_b05b8"
     };
-    script2.innerHTML = 'new TradingView.widget(' + JSON.stringify(widgetSettings) + ');';
+
+    script1.onload = function () {
+        // Когда скрипт tv.js загружен и объект TradingView определен
+        script2.innerHTML = 'new TradingView.widget(' + JSON.stringify(widgetSettings) + ');';
+
+        var webViewContainer = document.getElementById(divname);
+        if (webViewContainer) {
+            webViewContainer.innerHTML = '';
+            webViewContainer.appendChild(widgetContainer);
+            webViewContainer.appendChild(script2);
+            webViewContainer.appendChild(script1); // Помещаем script1 после script2, чтобы он был в DOM перед tv.js
+            webViewContainer.appendChild(script1);
+            webViewContainer.appendChild(script2);
+            webViewContainer.appendChild(script1); // Помещаем script1 после script2, чтобы он был в DOM перед tv.js
+            webViewContainer.appendChild(script2);
+        }
+    };
 
     var webViewContainer = document.getElementById(divname);
     if (webViewContainer) {
         webViewContainer.innerHTML = '';
         webViewContainer.appendChild(widgetContainer);
-        webViewContainer.appendChild(copyright);
         webViewContainer.appendChild(script1);
-        webViewContainer.appendChild(script2);
     }
 }
