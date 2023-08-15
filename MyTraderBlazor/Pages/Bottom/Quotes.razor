@@ -1,0 +1,54 @@
+﻿@page "/quotes"
+@using Microsoft.Maui.Controls
+@using Microsoft.Maui.Controls.Xaml
+@using Microsoft.AspNetCore.Components.WebView.Maui
+@using Microsoft.JSInterop
+@using System.Diagnostics;
+@inject IJSRuntime JS;
+
+<div style="display:flex; justify-content:space-between;">
+    <h3 style="display:inline-block;">Котировки</h3>
+
+    <span class="plus alt" style="display:inline-block" uk-toggle="@($"target: #addblock")"></span>
+
+    <div id="@($"addblock")" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Добавление</h2>
+            <textarea class="uk-textarea" rows="6" @bind="@symbol" style="margin-bottom: 10px;"></textarea>
+            <button class="uk-button uk-button-secondary uk-modal-close" @onclick="UpdateInput">Добавить</button>
+        </div>
+    </div>
+</div>
+
+<div id="widgets"></div>
+
+@code {
+
+    string symbol;
+    List<string> symbols;
+
+    protected override void OnInitialized()
+    {
+        symbols = new List<string>();
+    }
+
+    public async Task UpdateInput()
+    {
+        symbols.Add(symbol);
+        await JS.InvokeVoidAsync("loadWidgetQuote", symbol, "100%", "light", false, "ru");
+        symbol = "";
+    }
+
+    public async Task ShowWidget()
+    {
+        try
+        {
+            foreach(var symbol in symbols)
+                await JS.InvokeVoidAsync("loadWidgetQuote", symbol, "100%", "light", false, "ru");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}

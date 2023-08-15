@@ -1,0 +1,189 @@
+﻿@page "/lessonsstudy"
+@using System.Globalization;
+@inject MyTraderBlazor.Controllers.DataController dataController
+@inject Microsoft.JSInterop.IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
+@if (whatpage == false)
+{
+    <div class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="javascript:void(0);">Обучение</a></li>
+                <li><a @onclick="UpdateStatus" href="javascript:void(0);">Конференции</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between;">
+        <h3 style="display:inline-block;">Обучение</h3>
+        @if (adminAccess)
+        {
+            <span class="plus alt" style="display:inline-block" uk-toggle="@($"target: #addblock")"></span>
+
+            <div id="@($"addblock")" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <h2 class="uk-modal-title">Добавление видео</h2>
+                    <textarea class="uk-textarea" rows="6" @bind="@text" style="margin-bottom: 10px;"></textarea>
+                    <button class="uk-button uk-button-secondary uk-modal-close" @onclick="UploadData">Загрузить</button>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div style="display: flex; flex-direction: row;">
+        <div>
+            <div class="flex-item">
+                <div style="flex: 1;">
+                    @if (dataController.TextData == null)
+                    {
+                        <p>Данные загружаются...</p>
+                    }
+                    else if (dataController.TextData.Count == 0)
+                    {
+                        <p>На текущий момент данные отсутствуют.</p>
+                    }
+                    else
+                    {
+                        @foreach (var item in dataController.TextData)
+                        {
+                            <iframe src="@item.Text" 
+                            width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+else
+{
+    <div class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+                <li><a @onclick="UpdateStatus" href="javascript:void(0);">Обучение</a></li>
+                <li class="uk-active"><a href="javascript:void(0);">Конференции</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between;">
+        <h3 style="display:inline-block;">Конференции</h3>
+        @if (adminAccess)
+        {
+            <span class="plus alt" style="display:inline-block" uk-toggle="@($"target: #addblock")"></span>
+
+            <div id="@($"addblock")" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <h2 class="uk-modal-title">Добавление видео</h2>
+                    <textarea class="uk-textarea" rows="6" @bind="@text" style="margin-bottom: 10px;"></textarea>
+                    <button class="uk-button uk-button-secondary uk-modal-close" @onclick="UploadData">Загрузить</button>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div style="display: flex; flex-direction: row;">
+        <div>
+            <div class="flex-item">
+                <div style="flex: 1;">
+                    @if (dataController.TextData == null)
+                    {
+                        <p>Данные загружаются...</p>
+                    }
+                    else if (dataController.TextData.Count == 0)
+                    {
+                        <p>На текущий момент данные отсутствуют.</p>
+                    }
+                    else
+                    {
+                        @foreach (var item in dataController.TextData)
+                        {
+                            <iframe src="@item.Text"
+                                    width="1920" height="1080" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private string updateText;
+    private string text;
+
+    private bool whatpage;
+
+    private List<byte[]> selectedImages;
+    private bool adminAccess = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dataController.CurrentPageName = "lessonsstudy";
+        dataController.TextData = null;
+        adminAccess = dataController.ApiService.isAdmin();
+        await dataController.LoadData();
+        whatpage = false;
+    }
+
+    private async Task ChooseFile()
+    {
+        await JSRuntime.InvokeVoidAsync("eval", "document.getElementById('fileInput').click();");
+    }
+
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            if (selectedImages == null)
+                selectedImages = new List<byte[]>();
+
+            using (var memoryStream = new MemoryStream())
+            {
+                await file.OpenReadStream(maxAllowedSize: 10485760).CopyToAsync(memoryStream);
+                selectedImages.Add(memoryStream.ToArray());
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task UpdateStatus()
+    {
+        if (whatpage == false)
+        {
+            whatpage = true;
+            dataController.CurrentPageName = "lessonsconf";
+            dataController.TextData = null;
+            await dataController.LoadData();
+        }
+        else
+        {
+            whatpage = false;
+            dataController.CurrentPageName = "lessonsstudy";
+            dataController.TextData = null;
+            await dataController.LoadData();
+        }
+    }
+
+    private async Task UploadData()
+    {
+        await dataController.UploadData(text, selectedImages);
+        selectedImages = null;
+        text = null;
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        await dataController.LoadData();
+    }
+
+    private void GoToCommentPage(int blockId)
+    {
+        NavigationManager.NavigateTo($"/comment/{blockId}");
+    }
+}

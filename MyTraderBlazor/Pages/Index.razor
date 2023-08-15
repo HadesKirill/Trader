@@ -1,33 +1,16 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
-
-<h1>Приветствую, с чего начнём?</h1>
-
-<div>
-    <button @onclick="GoToQuotesPage">Котировки</button>
-    <button @onclick="GoToGraphsPage">Графики</button>
-    <button @onclick="GoToForecastsPage">Прогнозы</button>
-    <button @onclick="GoToInfoPage">Инфо</button>
-</div>
+@inject MyTraderBlazor.Controllers.DataController dataController
+@inject IJSRuntime JS;
 
 @code {
-    private void GoToQuotesPage()
+
+
+    protected override async Task OnInitializedAsync()
     {
-        NavigationManager.NavigateTo("/quotes");
+
+        NavigationManager.NavigateTo("/actual");    
+
     }
 
-    private void GoToGraphsPage()
-    {
-        NavigationManager.NavigateTo("/graphs");
-    }
-
-    private void GoToForecastsPage()
-    {
-        NavigationManager.NavigateTo("/forecasts");
-    }
-
-    private void GoToInfoPage()
-    {
-        NavigationManager.NavigateTo("/info");
-    }
 }

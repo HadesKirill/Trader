@@ -25,10 +25,6 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\bottomNavBar.css",
-      "PackagePath": "staticwebassets\\css\\bottomNavBar.css"
-    },
-    {
       "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
@@ -65,6 +61,26 @@
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\uikit-rtl.css",
+      "PackagePath": "staticwebassets\\css\\uikit-rtl.css"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\uikit-rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\uikit-rtl.min.css"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\uikit.css",
+      "PackagePath": "staticwebassets\\css\\uikit.css"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\css\\uikit.min.css",
+      "PackagePath": "staticwebassets\\css\\uikit.min.css"
+    },
+    {
       "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -73,8 +89,28 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\js\\imgscript.js",
+      "PackagePath": "staticwebassets\\js\\imgscript.js"
+    },
+    {
       "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\js\\scripts.js",
       "PackagePath": "staticwebassets\\js\\scripts.js"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\js\\uikit-icons.js",
+      "PackagePath": "staticwebassets\\js\\uikit-icons.js"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\js\\uikit-icons.min.js",
+      "PackagePath": "staticwebassets\\js\\uikit-icons.min.js"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\js\\uikit.js",
+      "PackagePath": "staticwebassets\\js\\uikit.js"
+    },
+    {
+      "Id": "F:\\MyTraderBlazor\\MyTraderBlazor\\wwwroot\\js\\uikit.min.js",
+      "PackagePath": "staticwebassets\\js\\uikit.min.js"
     },
     {
       "Id": "obj\\Debug\\net7.0-android\\staticwebassets\\msbuild.MyTraderBlazor.Microsoft.AspNetCore.StaticWebAssets.props",

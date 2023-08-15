@@ -1,0 +1,161 @@
+@page "/news"
+@using System.Globalization;
+@inject MyTraderBlazor.Controllers.DataController dataController
+@inject Microsoft.JSInterop.IJSRuntime JSRuntime
+
+<div style="display:flex; justify-content:space-between;">
+    <h3 style="display:inline-block;">Новости</h3>
+    @if (adminAccess)
+    {
+        <span class="plus alt" style="display:inline-block" uk-toggle="@($"target: #addblock")"></span>
+
+        <div id="@($"addblock")" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Добавление блока</h2>
+                <textarea class="uk-textarea" rows="6" @bind="@text" style="margin-bottom: 10px;"></textarea>
+
+                <InputFile id="fileInput" style="display:none;" OnChange="HandleFileChange" />
+                <button style="margin-right: 8px;" class="uk-button uk-button-default" @onclick="ChooseFile">Выбор файла</button>
+                <InputFile id="fileInput" style="display:none;" OnChange="HandleFileChange" />
+                <button class="uk-button uk-button-secondary uk-modal-close" @onclick="UploadData">Загрузить</button>
+
+                @if (selectedImages != null && selectedImages.Any())
+                {
+                    @foreach (var image in selectedImages)
+                    {
+                        <img src="@($"data:image/png;base64,{Convert.ToBase64String(image)}")" @onclick="() => selectedImages.Remove(image)" alt="Image" width="75" height="75" style="margin: 8px" />
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    <div>
+        <div>
+            <div>
+                @if (dataController.TextData == null)
+                {
+                    <p>Данные загружаются...</p>
+                }
+                else if (dataController.TextData.Count == 0)
+                {
+                    <p>На текущий момент данные отсутствуют.</p>
+                }
+                else
+                {
+                    @foreach (var item in dataController.TextData)
+                    {
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-expand">
+                                    <p style="margin:8px;" class="uk-text-meta">
+                                        <time>@item.GetDate()</time>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <div uk-grid uk-lightbox="animation: slide">
+                                    <figure>
+                                        @if (item.Images != null && item.Images.Any())
+                                        {
+                                            <div>
+                                                @foreach (var image in item.Images)
+                                                {
+                                                    @if (item.Images.First() == image)
+                                                    {
+                                                        <a style="margin: 4px;" class="uk-inline" href="@($"data:image/png;base64,{ByteArrayConverter.ConvertByteArrayToString(image)}")" data-type="image" data-caption="" uk-lightbox-item="animation: slide; toggle: false;">
+                                                            <img src="@($"data:image/png;base64,{ByteArrayConverter.ConvertByteArrayToString(image)}")" alt="Image" height="125" />
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a style="margin: 4px;" class="uk-inline" href="@($"data:image/png;base64,{ByteArrayConverter.ConvertByteArrayToString(image)}")" data-type="image" data-caption="" uk-lightbox-item="animation: slide; toggle: false;">
+                                                            <img src="@($"data:image/png;base64,{ByteArrayConverter.ConvertByteArrayToString(image)}")" alt="Image" height="50" width="75" />
+                                                        </a>
+                                                    }
+                                                }
+                                            </div>
+                                        }
+                                        <div>
+                                            <figcaption style="margin-top: 6px; margin-bottom: 8px">@item.Text</figcaption>
+                                        </div>
+                                        @if (adminAccess)
+                                        {
+                                            <button class="uk-button uk-button-secondary" @onclick="() => dataController.DeleteBlock(item.Id)">Удалить блок</button>
+                                            <button class="uk-button uk-button-secondary" uk-toggle="@($"target: #updt{item.Id}{dataController.CurrentPageName}")" type="button">Изменить текст</button>
+
+                                            <div id="@($"updt{item.Id}{dataController.CurrentPageName}")" uk-modal>
+                                                <div class="uk-modal-dialog uk-modal-body">
+                                                    <h2 class="uk-modal-title">Изменение текста</h2>
+                                                    <textarea class="uk-textarea" rows="6" placeholder="Изменённый текст" @bind="@updateText">@item.Text</textarea>
+                                                    <p class="uk-text-right">
+                                                        <button style="margin-right: 8px;" class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                                                        <button class="uk-button uk-button-secondary uk-modal-close" @onclick="() => dataController.UpdateTextBlock(item.Id, updateText)" type="button">Сохранить</button>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        }
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string updateText;
+    private string text;
+
+    private List<byte[]> selectedImages;
+    private bool adminAccess = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dataController.CurrentPageName = "news";
+        dataController.TextData = null;
+        adminAccess = dataController.ApiService.isAdmin();
+        await dataController.LoadData();
+    }
+
+    private async Task ChooseFile()
+    {
+        await JSRuntime.InvokeVoidAsync("eval", "document.getElementById('fileInput').click();");
+    }
+
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            if (selectedImages == null)
+                selectedImages = new List<byte[]>();
+
+            using (var memoryStream = new MemoryStream())
+            {
+                await file.OpenReadStream(maxAllowedSize: 10485760).CopyToAsync(memoryStream);
+                selectedImages.Add(memoryStream.ToArray());
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task UploadData()
+    {
+        await dataController.UploadData(text, selectedImages);
+        selectedImages = null;
+        text = null;
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        await dataController.LoadData();
+    }
+}

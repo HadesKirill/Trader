@@ -41,24 +41,52 @@ build_metadata.AdditionalFiles.TargetPath = TWFpbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/Actual.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Bottom/Actual.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0dWFsLnJhem9y
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm90dG9tXEFjdHVhbC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/Forecasts.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Bottom/Contacts.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9yZWNhc3RzLnJhem9y
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm90dG9tXENvbnRhY3RzLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/Graphs.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Bottom/Graphs.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JhcGhzLnJhem9y
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm90dG9tXEdyYXBocy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Bottom/More.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm90dG9tXE1vcmUucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Bottom/News.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm90dG9tXE5ld3MucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Bottom/Quotes.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm90dG9tXFF1b3Rlcy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Comment.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tbWVudC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -69,38 +97,87 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/More.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/InputPassword.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9yZS5yYXpvcg==
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5wdXRQYXNzd29yZC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/News.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3cy5yYXpvcg==
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/Quotes.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Options.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVvdGVzLnJhem9y
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3B0aW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Pages/WebView.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Registration.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2ViVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/MyTraderBlazor/MyTraderBlazor/Shared/SurveyPrompt.razor]
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Top/Forecasts.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wXEZvcmVjYXN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Top/SignalsIntraday.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wXFNpZ25hbHNJbnRyYWRheS5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Top/SignalsLong.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wXFNpZ25hbHNMb25nLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Top/VideoLessons.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wXFZpZGVvTGVzc29ucy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Pages/Top/VipSignals.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9wXFZpcFNpZ25hbHMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Shared/BottomNavigation.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEJvdHRvbU5hdmlnYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/MyTraderBlazor/MyTraderBlazor/Shared/TopNavigation.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRvcE5hdmlnYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -110,17 +187,3 @@ build_metadata.AdditionalFiles.ManifestResourceName =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
-
-[F:/MyTraderBlazor/MyTraderBlazor/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = b-6p363b1kp7
-
-[F:/MyTraderBlazor/MyTraderBlazor/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = b-ti945abf0p

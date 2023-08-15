@@ -138,4 +138,20 @@ public class ByteArrayConverter : JsonConverter<TextModel>
 
         throw new JsonException("Truncated file or internal error");
     }
+
+    public static string ConvertByteArrayToString(byte[] byteArray)
+    {
+        if (byteArray == null)
+        {
+            return null;
+        }
+
+        char[] charArray = new char[byteArray.Length];
+        for (int i = 0; i < byteArray.Length; i++)
+        {
+            charArray[i] = (char)byteArray[i];
+        }
+
+        return new string(charArray);
+    }
 }

@@ -6,8 +6,9 @@
     <title>MyTraderBlazor</title>
     <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/uikit.min.css" />
     <link href="css/app.css" rel="stylesheet" />
-    <link href="css/bottomNavBar.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <link href="MyTraderBlazor.styles.css" rel="stylesheet" />
 </head>
 
@@ -15,7 +16,7 @@
 
     <div class="status-bar-safe-area"></div>
 
-    <div id="app">Loading...</div>
+    <div id="app"><h2 class="uk-text-center" style="margin-top:20px">Загрузка, подождите</h2></div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -23,7 +24,10 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
     <script src="_framework/blazor.webview.js" autostart="false"></script>
+    <script src="myscript.js"></script>
     <script src="js/scripts.js"></script>
 
 </body>

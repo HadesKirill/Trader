@@ -721,6 +721,18 @@
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\microsoft.graphics.win2d\1.0.4\lib\net5.0-windows10.0.17763.0\Microsoft.Graphics.Canvas.Interop.dll">
       <PackagePath>Microsoft.Graphics.Canvas.Interop.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\microsoft.identitymodel.abstractions\6.32.1\lib\net6.0\Microsoft.IdentityModel.Abstractions.dll">
+      <PackagePath>Microsoft.IdentityModel.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\microsoft.identitymodel.jsonwebtokens\6.32.1\lib\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll">
+      <PackagePath>Microsoft.IdentityModel.JsonWebTokens.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\microsoft.identitymodel.logging\6.32.1\lib\net6.0\Microsoft.IdentityModel.Logging.dll">
+      <PackagePath>Microsoft.IdentityModel.Logging.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\microsoft.identitymodel.tokens\6.32.1\lib\net6.0\Microsoft.IdentityModel.Tokens.dll">
+      <PackagePath>Microsoft.IdentityModel.Tokens.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\microsoft.jsinterop\7.0.0\lib\net7.0\Microsoft.JSInterop.dll">
       <PackagePath>Microsoft.JSInterop.dll</PackagePath>
     </AppxPackagedFile>
@@ -781,6 +793,9 @@
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\mysql.data\8.1.0\lib\net7.0\MySql.Data.dll">
       <PackagePath>MySql.Data.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\npgsql\7.0.4\lib\net7.0\Npgsql.dll">
       <PackagePath>Npgsql.dll</PackagePath>
     </AppxPackagedFile>
@@ -790,6 +805,9 @@
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\portable.bouncycastle\1.9.0\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\quick.aspnetcore.components.web.extensions\6.0.2\lib\net6.0\Microsoft.AspNetCore.Components.Web.Extensions.dll">
+      <PackagePath>Microsoft.AspNetCore.Components.Web.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\sixlabors.imagesharp\3.0.1\lib\net6.0\SixLabors.ImageSharp.dll">
       <PackagePath>SixLabors.ImageSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -798,6 +816,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\system.drawing.common\4.7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll">
       <PackagePath>System.Drawing.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\system.identitymodel.tokens.jwt\6.32.1\lib\net6.0\System.IdentityModel.Tokens.Jwt.dll">
+      <PackagePath>System.IdentityModel.Tokens.Jwt.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\system.io.pipelines\7.0.0\lib\net7.0\System.IO.Pipelines.dll">
       <PackagePath>System.IO.Pipelines.dll</PackagePath>
@@ -853,6 +874,9 @@
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\quick.aspnetcore.components.web.extensions\6.0.2\staticwebassets\headManager.js">
+      <PackagePath>wwwroot\_content\Quick.AspNetCore.Components.Web.Extensions\headManager.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aka28\.nuget\packages\tradingview.blazor\2023.5.20.1603\contentFiles\any\net6.0\wwwroot\background.png">
       <PackagePath>wwwroot\background.png</PackagePath>
     </AppxPackagedFile>
@@ -871,9 +895,6 @@
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\MyTraderBlazor.styles.css">
       <PackagePath>wwwroot\MyTraderBlazor.styles.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\MyTraderBlazor.bundle.scp.css">
-      <PackagePath>wwwroot\MyTraderBlazor.bundle.scp.css</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
     </AppxPackagedFile>
@@ -882,9 +903,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\bottomNavBar.css">
-      <PackagePath>wwwroot\css\bottomNavBar.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
       <PackagePath>wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css</PackagePath>
@@ -913,14 +931,44 @@
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\open-iconic\README.md">
       <PackagePath>wwwroot\css\open-iconic\README.md</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\styles.css">
+      <PackagePath>wwwroot\css\styles.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\uikit.css">
+      <PackagePath>wwwroot\css\uikit.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\uikit.min.css">
+      <PackagePath>wwwroot\css\uikit.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\uikit-rtl.css">
+      <PackagePath>wwwroot\css\uikit-rtl.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\css\uikit-rtl.min.css">
+      <PackagePath>wwwroot\css\uikit-rtl.min.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\favicon.ico">
       <PackagePath>wwwroot\favicon.ico</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\js\imgscript.js">
+      <PackagePath>wwwroot\js\imgscript.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\js\scripts.js">
       <PackagePath>wwwroot\js\scripts.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\js\uikit.js">
+      <PackagePath>wwwroot\js\uikit.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\js\uikit.min.js">
+      <PackagePath>wwwroot\js\uikit.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\js\uikit-icons.js">
+      <PackagePath>wwwroot\js\uikit-icons.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\wwwroot\js\uikit-icons.min.js">
+      <PackagePath>wwwroot\js\uikit-icons.min.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
@@ -1092,12 +1140,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\Shared\MainLayout.razor.css">
-      <PackagePath>Shared\MainLayout.razor.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\MyTraderBlazor\MyTraderBlazor\Shared\NavMenu.razor.css">
-      <PackagePath>Shared\NavMenu.razor.css</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

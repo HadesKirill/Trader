@@ -1,0 +1,49 @@
+@page "/more"
+@using System.Diagnostics;
+@inject MyTraderBlazor.Controllers.DataController dataController
+@inject IJSRuntime JSRuntime
+
+<ul class="uk-list uk-list-divider">
+    <li>
+        <NavLink style="color: inherit;" class="nav-link" href="contacts">
+            Контакты
+        </NavLink>
+    </li>
+    <li>
+        <NavLink style="color: inherit;" class="nav-link" href="options">
+            Настройки
+        </NavLink>
+    </li>
+    @if(dataController.isAuthorized == true)
+    {
+        <li>
+            <NavLink style="color: inherit;" class="nav-link" @onclick="LogOut">
+                Выйти из аккаунта
+            </NavLink>
+        </li>
+    }
+    else
+    {
+        <li>
+            <NavLink style="color: inherit;" class="nav-link" href="login">
+                Войти в аккаунт
+            </NavLink>
+        </li>
+        <li>
+            <NavLink style="color: inherit;" class="nav-link" href="registration">
+                Регистрация
+            </NavLink>
+        </li>
+    }
+</ul>
+
+@code {
+
+    private async void LogOut()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "authToken");
+        dataController.ApiService.setToken(null);
+        dataController.isAuthorized = false;
+    }
+
+}

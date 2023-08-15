@@ -1,0 +1,207 @@
+/*-----------------------*/
+/* НИЖНЕЕ ОКНО НАВИГАЦИИ */
+/*-----------------------*/
+
+
+.bottom-navigation {
+    z-index:4;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.bottom-navigation nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-navigation .nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-link .oi {
+    margin-bottom: 0.5rem;
+}
+
+.bottom-navigation .nav-link:hover {
+    background-color: #e6e6e6;
+}
+
+
+/*------------------------*/
+/* ВЕРХНЕЕ ОКНО НАВИГАЦИИ */
+/*------------------------*/
+
+.top-navigation {
+    z-index: 4;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Заменили bottom на top и изменили значение box-shadow */
+    font-size: 14px;
+}
+
+.top-navigation nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-navigation .nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-link .oi {
+    margin-bottom: 0.5rem;
+}
+
+.top-navigation .nav-link:hover {
+    background-color: #e6e6e6;
+}
+
+.main-content {
+    flex: 1;
+    padding-top: 60px; /* Высота верхней панели */
+    padding-bottom: 75px; /* Высота нижней панели */
+}
+
+@media (max-width: 767px) {
+    /* Стили для маленьких экранов (телефоны и планшеты) */
+    .top-navigation,
+    .bottom-navigation {
+        font-size: 12px; /* Уменьшаем размер шрифта для маленьких экранов */
+    }
+
+    .main-content {
+        padding-top: 50px; /* Подогнать отступ сверху для маленьких экранов */
+        padding-bottom: 65px; /* Подогнать отступ снизу для маленьких экранов */
+    }
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*------------------*/
+/* ОСНОВНОЙ КОНТЕНТ */
+/*------------------*/
+
+.side-navigation {
+    /* Добавляем отступы, чтобы контент не прижимался к краям */
+    padding: 10px;
+}
+
+/* Стили для элементов списка навигации */
+.side-navigation .nav-link {
+    /* Добавляем рамку толщиной 1 пиксель, черного цвета */
+    border: 1px solid #000;
+    /* Добавляем отступы между элементами списка */
+    margin-bottom: 5px;
+    /* Добавляем немного внутреннего отступа, чтобы текст не прижимался к рамке */
+    padding: 5px;
+    /* Опционально: изменяем курсор при наведении на элемент для указания на то, что он является интерактивным */
+    cursor: pointer;
+}
+
+/* Стили для активной ссылки (если она будет выделена по-особенному) */
+.side-navigation .nav-link.active {
+    /* Пример: изменяем фон активной ссылки на серый цвет */
+    background-color: #f0f0f0;
+}
+
+
+/*-------------------------*/
+/* БЛОКИ ТЕКСТ-ИЗОБРАЖЕНИЯ */
+/*-------------------------*/
+
+
+/* Стили для контейнера сообщения */
+
+.uk-card {
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Вы можете настроить радиус, меняя значение 10px на другое */
+    margin-bottom: 10px;
+}
+
+.uk-card-body {
+    padding: 10px 10px;
+}
+
+.message-container {
+    /* Добавляем отступы, чтобы сообщения не сливались */
+    margin-bottom: 10px;
+    /* Задаем позиционирование для внутренних элементов */
+    display: flex;
+    align-items: flex-start; /* Картинка и текст выравниваются по верхнему краю */
+    border-radius: 10px; /* Закругляем углы */
+    border: 1px solid #ddd; /* Добавляем рамку для блока сообщения */
+    padding: 10px; /* Добавляем отступ внутри блока сообщения */
+}
+
+/* Стили для картинки */
+.message-image {
+    width: 80px; /* Задаем ширину картинки (может быть любой) */
+    height: auto; /* Автоматический расчет высоты картинки для сохранения пропорций */
+    border-radius: 5px; /* Закругляем углы картинки */
+    margin-right: 10px; /* Отступ между картинкой и текстом */
+}
+
+/* Стили для текста */
+.message-text {
+    flex: 1; /* Делаем текст занимающим всю доступную ширину внутри контейнера */
+}
+
+
+/*------------------------*/
+/* СТИЛИЗАЦИЯ ЗНАЧКА ПЛЮС */
+/*------------------------*/
+
+.plus {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), #000;
+    background-position: center;
+    background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat: no-repeat;
+}
+
+.alt {
+    background: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+    background-position: center;
+    background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat: no-repeat;
+}
+
+.radius {
+    border-radius: 50%;
+}
+
+
+/*---------------------*/
+/* ГАЛЕРЕЯ ИЗОБРАЖЕНИЙ */
+/*---------------------*/
+

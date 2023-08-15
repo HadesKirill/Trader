@@ -1,0 +1,57 @@
+﻿@page "/login"
+@using System.Diagnostics;
+@inject MyTraderBlazor.Controllers.DataController dataController
+@inject IJSRuntime JSRuntime
+
+<h3 style="display:inline-block;">Вход в аккаунт</h3>
+
+<div>
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input @bind="@username" placeholder="Логин" class="uk-input" type="text" aria-label="Not clickable icon">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+            <input @bind="@password" placeholder="Пароль" class="uk-input" type="password" aria-label="Not clickable icon">
+        </div>
+    </div>
+
+    <button class="uk-button uk-button-secondary" @onclick="LoginUserAsync">Войти</button>
+
+</div>
+
+@code {
+    private string username;
+    private string password;
+
+    private async Task LoginUserAsync()
+    {
+        // Вызываем метод LoginUser из контроллера
+        await dataController.LoginUser(username, password);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Подписываемся на событие TokenReceived только при первой отрисовке компонента
+            dataController.TokenReceived += HandleTokenReceived;
+        }
+    }
+
+    private void HandleTokenReceived(object sender, string token)
+    {
+        // Обработка полученного токена, например, сохранение в локальное хранилище
+        JSRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
+    }
+
+    public async Task DisposeAsync()
+    {
+        // Отписываемся от события при выгрузке компонента
+        dataController.TokenReceived -= HandleTokenReceived;
+    }
+}

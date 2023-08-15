@@ -15,6 +15,7 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == '' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildMultiTargeting\TradingView.Blazor.props" Condition="Exists('$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildMultiTargeting\TradingView.Blazor.props')" />
+    <Import Project="$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildMultiTargeting\Quick.AspNetCore.Components.Web.Extensions.props" Condition="Exists('$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildMultiTargeting\Quick.AspNetCore.Components.Web.Extensions.props')" />
   </ImportGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Content Include="$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\contentFiles\any\net6.0\wwwroot\background.png" Condition="Exists('$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\contentFiles\any\net6.0\wwwroot\background.png')">
@@ -91,24 +92,28 @@
   <ImportGroup Condition=" '$(TargetFramework)' == 'net7.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props" Condition="Exists('$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props')" />
+    <Import Project="$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props" Condition="Exists('$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webview.maui\7.0.86\build\Microsoft.AspNetCore.Components.WebView.Maui.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webview.maui\7.0.86\build\Microsoft.AspNetCore.Components.WebView.Maui.props')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net7.0-ios' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props" Condition="Exists('$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props')" />
+    <Import Project="$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props" Condition="Exists('$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webview.maui\7.0.86\build\Microsoft.AspNetCore.Components.WebView.Maui.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webview.maui\7.0.86\build\Microsoft.AspNetCore.Components.WebView.Maui.props')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net7.0-maccatalyst' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props" Condition="Exists('$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props')" />
+    <Import Project="$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props" Condition="Exists('$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webview.maui\7.0.86\build\Microsoft.AspNetCore.Components.WebView.Maui.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webview.maui\7.0.86\build\Microsoft.AspNetCore.Components.WebView.Maui.props')" />
   </ImportGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net7.0-windows10.0.19041.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props" Condition="Exists('$(NuGetPackageRoot)tradingview.blazor\2023.5.20.1603\buildTransitive\TradingView.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.0.1\build\SixLabors.ImageSharp.props')" />
+    <Import Project="$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props" Condition="Exists('$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.5\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.windows.sdk.buildtools\10.0.22621.755\build\Microsoft.Windows.SDK.BuildTools.props" Condition="Exists('$(NuGetPackageRoot)microsoft.windows.sdk.buildtools\10.0.22621.755\build\Microsoft.Windows.SDK.BuildTools.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.windowsappsdk\1.2.221209.1\buildTransitive\Microsoft.WindowsAppSDK.props" Condition="Exists('$(NuGetPackageRoot)microsoft.windowsappsdk\1.2.221209.1\buildTransitive\Microsoft.WindowsAppSDK.props')" />

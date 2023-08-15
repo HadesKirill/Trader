@@ -1,4 +1,5 @@
-﻿function loadWidgetQuote(divname, symbol, width, colorTheme, isTransparent, locale) {
+﻿
+function loadWidgetQuote(symbol, width, colorTheme, isTransparent, locale) {
     try {
         var widgetContainer = document.createElement('div');
         widgetContainer.className = 'tradingview-widget-container';
@@ -23,12 +24,15 @@
         });
         copyright.appendChild(script);
 
-        var webViewContainer = document.getElementById(divname);
+        var webViewContainer = document.createElement('div');
         if (webViewContainer) {
             webViewContainer.innerHTML = '';
             webViewContainer.appendChild(widgetContainer);
             webViewContainer.appendChild(copyright);
         }
+        var widgetsContainer = document.getElementById('widgets');
+
+        widgetsContainer.appendChild(webViewContainer);
     }
     catch (error) {
         var errorMessage = document.createElement('div');

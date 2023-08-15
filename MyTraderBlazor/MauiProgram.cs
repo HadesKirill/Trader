@@ -16,6 +16,7 @@ public static class MauiProgram
 			});
 
         builder.Services.AddSingleton<DataController>();
+        builder.Services.AddSingleton<CommentController>();
 
         builder.Services.AddMauiBlazorWebView();
 

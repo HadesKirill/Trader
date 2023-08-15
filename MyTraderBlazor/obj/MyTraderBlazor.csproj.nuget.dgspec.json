@@ -103,13 +103,25 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Quick.AspNetCore.Components.Web.Extensions": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
             },
             "TradingView.Blazor": {
               "target": "Package",
@@ -246,13 +258,25 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Quick.AspNetCore.Components.Web.Extensions": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
             },
             "TradingView.Blazor": {
               "target": "Package",
@@ -334,13 +358,25 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Quick.AspNetCore.Components.Web.Extensions": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
             },
             "TradingView.Blazor": {
               "target": "Package",
@@ -439,13 +475,25 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Quick.AspNetCore.Components.Web.Extensions": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
             },
             "TradingView.Blazor": {
               "target": "Package",

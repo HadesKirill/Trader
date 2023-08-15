@@ -1,0 +1,42 @@
+﻿@page "/registration"
+@using System.Diagnostics;
+@inject MyTraderBlazor.Controllers.DataController dataController
+
+<h3 style="display:inline-block;">Регистрация</h3>
+
+<div>
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input @bind="@username" placeholder="Логин" class="uk-input" type="text" aria-label="Not clickable icon">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+            <input @bind="@email" placeholder="Email" class="uk-input" type="text">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+            <input @bind="@password" class="uk-input" placeholder="Пароль" type="password" aria-label="Not clickable icon">
+        </div>
+    </div>
+
+    <button class="uk-button uk-button-secondary" @onclick="RegisterUserAsync">Зарегистрироваться</button>
+
+</div>
+
+@code {
+    private string username;
+    private string email;
+    private string password;
+
+    private async Task RegisterUserAsync()
+    {
+        await dataController.RegisterUser(username, email, password);
+    }
+}

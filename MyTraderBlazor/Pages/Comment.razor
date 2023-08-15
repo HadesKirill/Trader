@@ -1,0 +1,98 @@
+﻿@page "/comment/{blockId}"
+@using System.Diagnostics;
+@using MyTraderBlazor.Models;
+@inject MyTraderBlazor.Controllers.DataController dataController
+@inject MyTraderBlazor.Controllers.CommentController commentController
+@inject Microsoft.JSInterop.IJSRuntime JSRuntime
+
+<div style="display: flex; flex-direction: row;">
+    <div>
+        <div class="flex-item">
+            <div style="flex: 1;">
+
+                @if (dataController.isAuthorized == true)
+                {
+                    <div class="uk-inline uk-width-1-1">
+                        <input style="margin-bottom: 12px; border: solid 2px;" class="uk-input" type="text" placeholder="Оставьте комментарий..." @bind="@comment" />
+                        <a style="margin-bottom: 12px;" class="uk-form-icon uk-form-icon-flip" @onclick="UploadComment">
+                            <span uk-icon="icon: pencil"></span>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <a class="uk-text-meta">Авторизируйтесь, чтобы комментировать</a>
+                }
+
+                @if (commentController.CommentData == null)
+                {
+                    <p>Комментарии загружаются...</p>
+                }
+                else if (commentController.CommentData.Count == 0)
+                {
+                    <p>Комментарии отсутствуют.</p>
+                }
+                else
+                {
+                    @foreach (var item in commentController.CommentData)
+                    {
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-expand">
+                                    <p style="margin: 8px;" class="uk-text-meta">
+                                        @item.Username
+                                        <time>@item.GetDate()</time>
+                                    </p>
+                                </div>
+                                @if (commentController.ApiService.isAdmin() == true || item.UserId == commentController.ApiService.getId())
+                                {
+                                    <div class="uk-width-auto">                                  
+                                        <div class="uk-flex uk-flex-middle">
+                                            <a style="margin: 8px;" @onclick="() => commentController.DeleteComment(item.Id)" uk-icon="icon: trash"></a>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="uk-card-body">
+                                <div uk-grid uk-lightbox="animation: slide">
+                                    <div>
+                                        @item.CommentText
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public string blockId { get; set; }
+
+    public string comment;
+    public string update_comment;
+
+    protected override async Task OnInitializedAsync()
+    {
+        commentController.CommentData = null;
+        commentController.CurrentBlockId = Convert.ToInt32(blockId);
+        commentController.ApiService = dataController.ApiService;
+        await commentController.LoadComments();
+    }
+
+    private async Task UploadComment()
+    {
+        await commentController.UploadComment(comment, dataController.ApiService.getId());
+        await LoadComment();
+        comment = "";
+    }
+
+    private async Task LoadComment()
+    {
+        await commentController.LoadComments();
+    }
+}
