@@ -17,7 +17,7 @@ namespace MyTraderBlazor
     public class ApiService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiBaseUrl = "https://traderapi.na4u.ru"; // Замените на адрес вашего API
+        private const string ApiBaseUrl = "https://traderapi.na4u.ru"; 
 
         private string _token;
         private bool _isAdmin;
@@ -62,7 +62,6 @@ namespace MyTraderBlazor
             _isAdmin = false;
             _isVip = false;
             var handler = new HttpClientHandler();
-            // Включите поддержку SSL (TLS)
             handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
             _httpClient = new HttpClient(handler);
             _httpClient.BaseAddress = new Uri(ApiBaseUrl);
@@ -84,7 +83,6 @@ namespace MyTraderBlazor
                 throw new InvalidOperationException("Token is not available. Please log in.");
             }
 
-            // Set the Authorization header with the token
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
 
             try
@@ -105,21 +103,17 @@ namespace MyTraderBlazor
 
         public async Task<bool> DeleteBlockAsync(string pageName, int blockId)
         {
-            // Check if the token is available
             if (string.IsNullOrEmpty(_token))
             {
                 throw new InvalidOperationException("Token is not available. Please log in.");
             }
 
-            // Set the Authorization header with the token
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
 
             try
             {
-                // Perform the DELETE request
                 var response = await _httpClient.DeleteAsync($"/data/{pageName}/{blockId}");
 
-                // Clear the Authorization header after the request is complete (optional)
                 _httpClient.DefaultRequestHeaders.Authorization = null;
 
                 return response.IsSuccessStatusCode;
@@ -133,13 +127,11 @@ namespace MyTraderBlazor
 
         public async Task<bool> UpdateTextAsync(string pageName, int blockId, string newText)
         {
-            // Check if the token is available
             if (string.IsNullOrEmpty(_token))
             {
                 throw new InvalidOperationException("Token is not available. Please log in.");
             }
 
-            // Set the Authorization header with the token
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
 
             try
@@ -151,10 +143,8 @@ namespace MyTraderBlazor
                     Text = newText
                 };
 
-                // Perform the PUT request with the updated text
                 var response = await _httpClient.PutAsJsonAsync($"/update/{pageName}/{blockId}", updateData);
 
-                // Clear the Authorization header after the request is complete (optional)
                 _httpClient.DefaultRequestHeaders.Authorization = null;
 
                 return response.IsSuccessStatusCode;
@@ -190,7 +180,6 @@ namespace MyTraderBlazor
                 if (response.IsSuccessStatusCode)
                 {
                     _token = await response.Content.ReadAsStringAsync();
-                    // Проверка, является ли пользователь администратором, на основе содержимого токена
                     _isAdmin = ParseAdminStatusFromToken(_token);
                     _id = ParseIdFromToken(_token);
                     return _token;
@@ -227,17 +216,13 @@ namespace MyTraderBlazor
         private bool ParseAdminStatusFromToken(string token)
         {
             try
-            {
-              
-
-                // Используем Newtonsoft.Json для десериализации JSON строки
+            {           
                 dynamic tokenObject = JsonConvert.DeserializeObject<dynamic>(token);
                 token = tokenObject.token;
 
                 var handler = new JwtSecurityTokenHandler();
                 var secretKey = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4XzW80yWUGk8+";
 
-                // Указываем параметры для валидации токена
                 var validationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
@@ -246,10 +231,8 @@ namespace MyTraderBlazor
                     ValidateAudience = false
                 };
 
-                // Декодируем и валидируем токен
                 var principal = handler.ValidateToken(token, validationParameters, out var validatedToken);
 
-                // Получаем значение isAdmin из токена
                 var isAdminClaim = principal.Claims.FirstOrDefault(c => c.Type == "admin");
 
                 if (isAdminClaim != null && isAdminClaim.Value == "1")
@@ -270,14 +253,12 @@ namespace MyTraderBlazor
         {
             try
             {
-                // Используем Newtonsoft.Json для десериализации JSON строки
                 dynamic tokenObject = JsonConvert.DeserializeObject<dynamic>(token);
                 token = tokenObject.token;
 
                 var handler = new JwtSecurityTokenHandler();
                 var secretKey = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4XzW80yWUGk8+";
 
-                // Указываем параметры для валидации токена
                 var validationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
@@ -286,10 +267,8 @@ namespace MyTraderBlazor
                     ValidateAudience = false
                 };
 
-                // Декодируем и валидируем токен
                 var principal = handler.ValidateToken(token, validationParameters, out var validatedToken);
 
-                // Получаем значение isAdmin из токена
                 var id = principal.Claims.FirstOrDefault(c => c.Type == "user");
 
                 if (id != null)
@@ -314,9 +293,6 @@ namespace MyTraderBlazor
 
         public async Task<bool> UploadCommentAsync(UploadCommentModel uploadComment)
         {
-            // Вам может потребоваться проверка наличия токена, аутентификация и добавление заголовков,
-            // если требуется для работы с комментариями.
-
             try
             {
                 var response = await _httpClient.PostAsJsonAsync($"/comment/{uploadComment.BlockId}", uploadComment);

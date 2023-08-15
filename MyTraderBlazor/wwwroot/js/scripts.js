@@ -25,6 +25,9 @@ function loadWidgetQuote(symbol, width, colorTheme, isTransparent, locale) {
         copyright.appendChild(script);
 
         var webViewContainer = document.createElement('div');
+
+        webViewContainer.id = symbol;
+
         if (webViewContainer) {
             webViewContainer.innerHTML = '';
             webViewContainer.appendChild(widgetContainer);
@@ -38,6 +41,13 @@ function loadWidgetQuote(symbol, width, colorTheme, isTransparent, locale) {
         var errorMessage = document.createElement('div');
         errorMessage.textContent = 'Произошла ошибка: ' + error.message;
         webViewContainer.appendChild(errorMessage);
+    }
+}
+
+function removeDivById(id) {
+    var element = document.getElementById(id);
+    if (element) {
+        element.remove();
     }
 }
 
@@ -81,7 +91,6 @@ function loadWidgetGraph(divname, symbol, width, height, theme, locale) {
     };
 
     script1.onload = function () {
-        // Когда скрипт tv.js загружен и объект TradingView определен
         script2.innerHTML = 'new TradingView.widget(' + JSON.stringify(widgetSettings) + ');';
 
         var webViewContainer = document.getElementById(divname);
@@ -89,10 +98,10 @@ function loadWidgetGraph(divname, symbol, width, height, theme, locale) {
             webViewContainer.innerHTML = '';
             webViewContainer.appendChild(widgetContainer);
             webViewContainer.appendChild(script2);
-            webViewContainer.appendChild(script1); // Помещаем script1 после script2, чтобы он был в DOM перед tv.js
+            webViewContainer.appendChild(script1); 
             webViewContainer.appendChild(script1);
             webViewContainer.appendChild(script2);
-            webViewContainer.appendChild(script1); // Помещаем script1 после script2, чтобы он был в DOM перед tv.js
+            webViewContainer.appendChild(script1); 
             webViewContainer.appendChild(script2);
         }
     };

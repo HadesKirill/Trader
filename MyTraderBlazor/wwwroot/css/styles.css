@@ -52,7 +52,7 @@
     width: 100%;
     background-color: #f8f8f8;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Заменили bottom на top и изменили значение box-shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 14px;
 }
 
@@ -82,20 +82,19 @@
 
 .main-content {
     flex: 1;
-    padding-top: 60px; /* Высота верхней панели */
-    padding-bottom: 75px; /* Высота нижней панели */
+    padding-top: 60px;
+    padding-bottom: 75px;
 }
 
 @media (max-width: 767px) {
-    /* Стили для маленьких экранов (телефоны и планшеты) */
     .top-navigation,
     .bottom-navigation {
-        font-size: 12px; /* Уменьшаем размер шрифта для маленьких экранов */
+        font-size: 12px; 
     }
 
     .main-content {
-        padding-top: 50px; /* Подогнать отступ сверху для маленьких экранов */
-        padding-bottom: 65px; /* Подогнать отступ снизу для маленьких экранов */
+        padding-top: 50px;
+        padding-bottom: 65px; 
     }
 }
 
@@ -110,25 +109,17 @@
 /*------------------*/
 
 .side-navigation {
-    /* Добавляем отступы, чтобы контент не прижимался к краям */
     padding: 10px;
 }
 
-/* Стили для элементов списка навигации */
 .side-navigation .nav-link {
-    /* Добавляем рамку толщиной 1 пиксель, черного цвета */
     border: 1px solid #000;
-    /* Добавляем отступы между элементами списка */
     margin-bottom: 5px;
-    /* Добавляем немного внутреннего отступа, чтобы текст не прижимался к рамке */
     padding: 5px;
-    /* Опционально: изменяем курсор при наведении на элемент для указания на то, что он является интерактивным */
     cursor: pointer;
 }
 
-/* Стили для активной ссылки (если она будет выделена по-особенному) */
 .side-navigation .nav-link.active {
-    /* Пример: изменяем фон активной ссылки на серый цвет */
     background-color: #f0f0f0;
 }
 
@@ -137,12 +128,9 @@
 /* БЛОКИ ТЕКСТ-ИЗОБРАЖЕНИЯ */
 /*-------------------------*/
 
-
-/* Стили для контейнера сообщения */
-
 .uk-card {
     border: 1px solid #ddd;
-    border-radius: 10px; /* Вы можете настроить радиус, меняя значение 10px на другое */
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
@@ -151,27 +139,23 @@
 }
 
 .message-container {
-    /* Добавляем отступы, чтобы сообщения не сливались */
     margin-bottom: 10px;
-    /* Задаем позиционирование для внутренних элементов */
     display: flex;
-    align-items: flex-start; /* Картинка и текст выравниваются по верхнему краю */
-    border-radius: 10px; /* Закругляем углы */
-    border: 1px solid #ddd; /* Добавляем рамку для блока сообщения */
-    padding: 10px; /* Добавляем отступ внутри блока сообщения */
+    align-items: flex-start; 
+    border-radius: 10px; 
+    border: 1px solid #ddd; 
+    padding: 10px;
 }
 
-/* Стили для картинки */
 .message-image {
-    width: 80px; /* Задаем ширину картинки (может быть любой) */
-    height: auto; /* Автоматический расчет высоты картинки для сохранения пропорций */
-    border-radius: 5px; /* Закругляем углы картинки */
-    margin-right: 10px; /* Отступ между картинкой и текстом */
+    width: 80px; 
+    height: auto;
+    border-radius: 5px; 
+    margin-right: 10px; 
 }
 
-/* Стили для текста */
 .message-text {
-    flex: 1; /* Делаем текст занимающим всю доступную ширину внутри контейнера */
+    flex: 1;
 }
 
 

@@ -9,7 +9,7 @@ namespace MyTraderBlazor.Controllers
         public ApiService ApiService = new ApiService();
 
         public List<TextModel> TextData;
-        public string CurrentPageName = ""; // Здесь укажите имя текущей страницы
+        public string CurrentPageName = ""; 
 
         public event EventHandler<string> TokenReceived;
 
@@ -43,11 +43,11 @@ namespace MyTraderBlazor.Controllers
 
             if (success)
             {
-                await LoadData(); // Обновление данных после успешной загрузки
+                await LoadData(); 
             }
             else
             {
-                // Обработка ошибки при загрузке
+                
             }
         }
 
@@ -56,11 +56,11 @@ namespace MyTraderBlazor.Controllers
             var success = await ApiService.DeleteBlockAsync(CurrentPageName, blockId);
             if (success)
             {
-                await LoadData(); // Обновляем данные после успешного удаления блока
+                await LoadData(); 
             }
             else
             {
-                // Обработка ошибки при удалении
+               
             }
         }
 
@@ -69,11 +69,11 @@ namespace MyTraderBlazor.Controllers
             var success = await ApiService.UpdateTextAsync(CurrentPageName, blockId, text);
             if (success)
             {
-                await LoadData(); // Обновляем данные после успешного удаления блока
+                await LoadData(); 
             }
             else
             {
-                // Обработка ошибки при удалении
+                
             }
         }
 
@@ -83,11 +83,11 @@ namespace MyTraderBlazor.Controllers
             var success = await ApiService.RegisterAsync(username, email, password);
             if (success)
             {
-                // Обработка успешной регистрации
+                
             }
             else
             {
-                // Обработка ошибки при регистрации
+                
             }
         }
 
@@ -101,7 +101,7 @@ namespace MyTraderBlazor.Controllers
             }
             else
             {
-                // Обработка ошибки при входе
+                
             }
         }
 
@@ -110,11 +110,11 @@ namespace MyTraderBlazor.Controllers
             var success = await ApiService.UpdateUserAsync(userId, username, email, password);
             if (success)
             {
-                // Обработка успешного обновления данных пользователя
+                
             }
             else
             {
-                // Обработка ошибки при обновлении данных пользователя
+               
             }
         }
 

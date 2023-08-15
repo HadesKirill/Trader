@@ -25,6 +25,9 @@ function loadWidgetQuote(symbol, width, colorTheme, isTransparent, locale) {
         copyright.appendChild(script);
 
         var webViewContainer = document.createElement('div');
+
+        webViewContainer.id = symbol;
+
         if (webViewContainer) {
             webViewContainer.innerHTML = '';
             webViewContainer.appendChild(widgetContainer);
@@ -38,6 +41,13 @@ function loadWidgetQuote(symbol, width, colorTheme, isTransparent, locale) {
         var errorMessage = document.createElement('div');
         errorMessage.textContent = 'Произошла ошибка: ' + error.message;
         webViewContainer.appendChild(errorMessage);
+    }
+}
+
+function removeDivById(id) {
+    var element = document.getElementById(id);
+    if (element) {
+        element.remove();
     }
 }
 

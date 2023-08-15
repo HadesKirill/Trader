@@ -4,6 +4,9 @@
 @using Microsoft.AspNetCore.Components.WebView.Maui
 @using Microsoft.JSInterop
 @using System.Diagnostics;
+@using System.IO;
+@using System.Linq;
+@using System.Web;
 @inject IJSRuntime JS;
 
 <div style="display:flex; justify-content:space-between;">
@@ -13,42 +16,90 @@
 
     <div id="@($"addblock")" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title">Добавление</h2>
-            <textarea class="uk-textarea" rows="6" @bind="@symbol" style="margin-bottom: 10px;"></textarea>
-            <button class="uk-button uk-button-secondary uk-modal-close" @onclick="UpdateInput">Добавить</button>
+            <h2 class="uk-modal-title">Редактирование</h2>
+            <textarea class="uk-textarea" rows="6" @bind="@SearchTerm" style="margin-bottom: 10px;"></textarea>
+            <button class="uk-button uk-button-secondary uk-modal-close" @onclick="AddWidget">Добавить</button>
+            <button class="uk-button uk-button-secondary uk-modal-close" @onclick="RemoveWidget">Удалить</button>
         </div>
     </div>
 </div>
 
 <div id="widgets"></div>
 
+
 @code {
+    string SearchTerm;
+    List<string> widgets;
+    string ErrorMessage { get; set; }
+    string filePath;
 
-    string symbol;
-    List<string> symbols;
-
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        symbols = new List<string>();
-    }
-
-    public async Task UpdateInput()
-    {
-        symbols.Add(symbol);
-        await JS.InvokeVoidAsync("loadWidgetQuote", symbol, "100%", "light", false, "ru");
-        symbol = "";
-    }
-
-    public async Task ShowWidget()
-    {
+        widgets = new List<string>();
         try
         {
-            foreach(var symbol in symbols)
-                await JS.InvokeVoidAsync("loadWidgetQuote", symbol, "100%", "light", false, "ru");
+            filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Favourites.txt");
+
+            if (File.Exists(filePath))
+            {
+                string[] lines = await File.ReadAllLinesAsync(filePath);
+                widgets.AddRange(lines);
+
+                foreach (var line in lines)
+                {
+                    await LoadWidgetQuote(line);
+                }
+            }
         }
         catch (Exception ex)
         {
-            Debug.WriteLine($"Exception: {ex.Message}");
+            ErrorMessage = ex.Message;
+        }
+    }
+
+    public async Task AddWidget()
+    {
+        try
+        {
+            if (!widgets.Contains(SearchTerm) && !string.IsNullOrWhiteSpace(SearchTerm))
+            {
+                widgets.Add(SearchTerm);
+                await LoadWidgetQuote(SearchTerm);
+                SearchTerm = string.Empty;
+
+                await File.WriteAllLinesAsync(filePath, widgets);
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = ex.Message;
+        }
+    }
+
+    public async Task RemoveWidget()
+    {
+        try
+        {
+            widgets.Remove(SearchTerm);
+            await File.WriteAllLinesAsync(filePath, widgets);
+            await JS.InvokeVoidAsync("removeDivById", SearchTerm);
+            SearchTerm = string.Empty;      
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = ex.Message;
+        }
+    }
+
+    private async Task LoadWidgetQuote(string searchTerm)
+    {
+        try
+        {
+            await JS.InvokeVoidAsync("loadWidgetQuote", searchTerm, "100%", "light", false, "ru");
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = ex.Message;
         }
     }
 }

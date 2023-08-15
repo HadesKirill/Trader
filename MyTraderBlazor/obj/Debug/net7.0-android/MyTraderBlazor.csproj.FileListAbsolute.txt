@@ -1028,14 +1028,6 @@ F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\assets\System.
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\assets\System.Runtime.Extensions.dll
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\assets\System.Runtime.Serialization.Formatters.dll
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\assets\System.Xml.dll
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\typemaps.x86_64.ll
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\environment.x86_64.ll
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\compressed_assemblies.x86_64.ll
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\typemaps.x86_64.o
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\environment.x86_64.o
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\compressed_assemblies.x86_64.o
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\jni_remap.x86_64.o
-F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\app_shared_libraries\x86_64\libxamarin-app.so
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-anydpi-v26\myicon.xml
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-anydpi-v26\myicon_round.xml
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-hdpi\myicon.png
@@ -1053,3 +1045,11 @@ F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-x
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-xxxhdpi\myicon.png
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-xxxhdpi\myicon_background.png
 F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\resizetizer\r\mipmap-xxxhdpi\myicon_foreground.png
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\typemaps.arm64-v8a.ll
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\environment.arm64-v8a.ll
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\compressed_assemblies.arm64-v8a.ll
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\typemaps.arm64-v8a.o
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\environment.arm64-v8a.o
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\compressed_assemblies.arm64-v8a.o
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\android\jni_remap.arm64-v8a.o
+F:\MyTraderBlazor\MyTraderBlazor\obj\Debug\net7.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so

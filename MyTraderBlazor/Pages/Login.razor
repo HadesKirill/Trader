@@ -30,7 +30,6 @@
 
     private async Task LoginUserAsync()
     {
-        // Вызываем метод LoginUser из контроллера
         await dataController.LoginUser(username, password);
     }
 
@@ -38,20 +37,17 @@
     {
         if (firstRender)
         {
-            // Подписываемся на событие TokenReceived только при первой отрисовке компонента
             dataController.TokenReceived += HandleTokenReceived;
         }
     }
 
     private void HandleTokenReceived(object sender, string token)
     {
-        // Обработка полученного токена, например, сохранение в локальное хранилище
         JSRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
     }
 
     public async Task DisposeAsync()
     {
-        // Отписываемся от события при выгрузке компонента
         dataController.TokenReceived -= HandleTokenReceived;
     }
 }

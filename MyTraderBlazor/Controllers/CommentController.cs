@@ -14,7 +14,7 @@ namespace MyTraderBlazor.Controllers
         public ApiService ApiService = new ApiService();
 
         public List<CommentModel> CommentData;
-        public int CurrentBlockId; // Здесь укажите текущий айди блока текста
+        public int CurrentBlockId;
 
         protected override async Task OnInitializedAsync()
         {
@@ -36,7 +36,7 @@ namespace MyTraderBlazor.Controllers
             var uploadComment = new UploadCommentModel
             {
                 BlockId = CurrentBlockId,
-                UserId = userId, // Здесь укажите айди текущего пользователя или получите его из сессии/токена
+                UserId = userId, 
                 CommentText = commentText
             };
 
@@ -44,11 +44,11 @@ namespace MyTraderBlazor.Controllers
 
             if (success)
             {
-                await LoadComments(); // Обновление комментариев после успешной загрузки
+                await LoadComments();
             }
             else
             {
-                // Обработка ошибки при загрузке комментария
+
             }
         }
 
@@ -58,11 +58,11 @@ namespace MyTraderBlazor.Controllers
 
             if (success)
             {
-                await LoadComments(); // Обновление комментариев после успешного удаления
+                await LoadComments(); 
             }
             else
             {
-                // Обработка ошибки при удалении комментария
+                
             }
         }
 
@@ -72,11 +72,11 @@ namespace MyTraderBlazor.Controllers
 
             if (success)
             {
-                await LoadComments(); // Обновление комментариев после успешного обновления
+                await LoadComments(); 
             }
             else
             {
-                // Обработка ошибки при обновлении комментария
+                
             }
         }
 
